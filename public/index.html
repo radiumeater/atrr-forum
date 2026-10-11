@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0d">
+  <title>ATRR Forum</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #0b0b0d;
+      color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      padding: 22px 7%;
+      border-bottom: 1px solid #29292e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand { font-size: 22px; font-weight: 800; }
+    .brand span { color: #ff3b30; }
+    .login {
+      color: white;
+      background: #ff3b30;
+      border: 0;
+      border-radius: 8px;
+      padding: 11px 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    main { max-width: 900px; margin: 65px auto; padding: 0 22px; }
+    .eyebrow {
+      color: #ff625a;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    h1 { font-size: clamp(36px, 7vw, 60px); margin: 14px 0; }
+    .intro { color: #aaaab3; line-height: 1.7; max-width: 600px; }
+    .category {
+      border: 1px solid #303036;
+      background: #131316;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 14px;
+    }
+    .category h2 { font-size: 18px; margin: 0 0 8px; }
+    .category p { color: #aaaab3; margin: 0; line-height: 1.5; }
+    footer {
+      text-align: center;
+      color: #777780;
+      padding: 35px 15px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">ATRR <span>FORUM</span></div>
+    <button class="login" id="login">Discord Login</button>
+  </header>
+
+  <main>
+    <div class="eyebrow">All Things Rec Room Community</div>
+    <h1>Everyone has a place here.</h1>
+    <p class="intro">
+      Welcome to the ATRR Forum — a place to discuss Rec Room,
+      share creations, ask questions, and connect with the community.
+    </p>
+
+    <section class="category">
+      <h2>General Discussion</h2>
+      <p>Meet the community and join the conversation.</p>
+    </section>
+    <section class="category">
+      <h2>Rec Room Discussion</h2>
+      <p>Talk about gameplay, news, and your experiences.</p>
+    </section>
+    <section class="category">
+      <h2>Creations &amp; Showcases</h2>
+      <p>Share your projects and creative work.</p>
+    </section>
+    <section class="category">
+      <h2>ATRR News &amp; Updates</h2>
+      <p>Read official community announcements.</p>
+    </section>
+  </main>
+
+  <footer>ATRR Forum · All Things Rec Room</footer>
+</body>
+</html>
