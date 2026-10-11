@@ -7,5 +7,12 @@
   "assets": {
     "directory": "./public",
     "binding": "ASSETS"
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "atrr-forum-db",
+      "database_id": "2aa50ce9-2213-43bc-8b83-27a6600c1629"
+    }
+  ]
 }
