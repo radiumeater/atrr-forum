@@ -3,7 +3,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Test the database connection.
+    // Database health check
     if (url.pathname === "/api/health") {
       try {
         const result = await env.DB.prepare(
@@ -15,18 +15,40 @@ export default {
           database: "connected",
           categories: result.total
         });
-      } catch (error) {
+      } catch {
         return Response.json(
-          {
-            status: "error",
-            message: "Database connection failed."
-          },
+          { status: "error", message: "Database connection failed." },
           { status: 500 }
         );
       }
     }
 
-    // Serve the existing forum website.
+    // Retrieve forum categories
+    if (url.pathname === "/api/categories") {
+      try {
+        const { results } = await env.DB.prepare(
+          `SELECT id, name, slug, description, icon
+           FROM categories
+           ORDER BY sort_order ASC`
+        ).all();
+
+        return Response.json(
+          { categories: results },
+          {
+            headers: {
+              "Cache-Control": "no-store"
+            }
+          }
+        );
+      } catch {
+        return Response.json(
+          { error: "Could not load categories." },
+          { status: 500 }
+        );
+      }
+    }
+
+    // Serve the existing forum website
     return env.ASSETS.fetch(request);
   }
 };
